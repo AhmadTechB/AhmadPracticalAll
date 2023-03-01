@@ -59,23 +59,23 @@ class _MyHomePageState extends State<MyHomePage> {
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
                   borderSide:
-                  BorderSide(width: 3, color: Colors.greenAccent), //<-- SEE HERE
+                  const BorderSide(width: 3, color: Colors.greenAccent), //<-- SEE HERE
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide:
-                  BorderSide(width: 3, color: Colors.black), //<-- SEE HERE
+                  const BorderSide(width: 3, color: Colors.black), //<-- SEE HERE
                   borderRadius: BorderRadius.circular(20.0),
                 ),
               ),
             ),
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
             TextFormField(
               textAlign: TextAlign.center,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
                   borderSide:
-                  BorderSide(width: 3, color: Colors.greenAccent), //<-- SEE HERE
+                  const BorderSide(width: 3, color: Colors.greenAccent), //<-- SEE HERE
                   borderRadius: BorderRadius.circular(20.0),
                 ),
               ),
@@ -85,7 +85,27 @@ class _MyHomePageState extends State<MyHomePage> {
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
                   borderSide:
-                  BorderSide(width: 3, color: Colors.greenAccent), //<-- SEE HERE
+                  const BorderSide(width: 3, color: Colors.greenAccent), //<-- SEE HERE
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+              ),
+            ),
+            TextFormField(
+              textAlign: TextAlign.center,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                  borderSide:
+                  const BorderSide(width: 3, color: Colors.greenAccent), //<-- SEE HERE
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+              ),
+            ),
+            TextFormField(
+              textAlign: TextAlign.center,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                  borderSide:
+                  const BorderSide(width: 3, color: Colors.greenAccent), //<-- SEE HERE
                   borderRadius: BorderRadius.circular(20.0),
                 ),
               ),
