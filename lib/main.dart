@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -50,70 +52,149 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
 
 
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            TextFormField(
-              textAlign: TextAlign.center,
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
-                  const BorderSide(width: 3, color: Colors.greenAccent), //<-- SEE HERE
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide:
-                  const BorderSide(width: 3, color: Colors.black), //<-- SEE HERE
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-              ),
-            ),
-            const SizedBox(height: 10,),
-            TextFormField(
-              textAlign: TextAlign.center,
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
-                  const BorderSide(width: 3, color: Colors.greenAccent), //<-- SEE HERE
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-              ),
-            ),
-            TextFormField(
-              textAlign: TextAlign.center,
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
-                  const BorderSide(width: 3, color: Colors.greenAccent), //<-- SEE HERE
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-              ),
-            ),
-            TextFormField(
-              textAlign: TextAlign.center,
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
-                  const BorderSide(width: 3, color: Colors.greenAccent), //<-- SEE HERE
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-              ),
-            ),
-            TextFormField(
-              textAlign: TextAlign.center,
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
-                  const BorderSide(width: 3, color: Colors.greenAccent), //<-- SEE HERE
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-              ),
-            ),
-
-          ],
+      body: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Center(
+          child: Container(
+            width: 313,
+            height: 391,
+            decoration: BoxDecoration(
+              color: const Color(0xffFFFFFF),
+              border: Border.all(width: 3, color: const Color(0xffFFFFFF)),
+              borderRadius: const BorderRadius.all(Radius.circular(3)),
         ),
-      ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(top: 32,left: 22,),
+                      child: Text("Contract information",
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xff4B4B4B),
+                        ),
+                      ),
+                    ),
+                  const SizedBox(height: 20,),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                      children:const [
+                        Expanded(
+                            child: Divider(
+                              color: Color(0xff4B4B4B),
+                            ),
+                        ),
+                      ]
+                  ),
+                  const SizedBox(height: 20,),
+
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: const [
+                      Padding(
+                        padding: EdgeInsets.only(left: 22,right: 22,),
+                        child: Text("Please ensure that the contract information of the crypto you deposit is the same as this crypto. Depositing crypto with different contract information will result in lost assets. Please copy the link into y our browser to view the current contract address.",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 37,),
+                  Row(
+                    children: const [
+                      Padding(
+                        padding: EdgeInsets.only(left: 22,),
+                        child: Text("https://bscscan.../token/***98745",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xff4B4B4B),
+                          ),
+                        ),
+                      ),
+
+                    ],
+                  ),
+                ],
+            ),
+          ),
+        ),
+      ],
+    ),
+
+
+
+    // body: Padding(
+      //   padding: const EdgeInsets.all(8.0),
+      //   child: Column(
+      //     children: [
+      //       TextFormField(
+      //         textAlign: TextAlign.center,
+      //         decoration: InputDecoration(
+      //           enabledBorder: OutlineInputBorder(
+      //             borderSide:
+      //             const BorderSide(width: 3, color: Colors.greenAccent), //<-- SEE HERE
+      //             borderRadius: BorderRadius.circular(20.0),
+      //           ),
+      //           focusedBorder: OutlineInputBorder(
+      //             borderSide:
+      //             const BorderSide(width: 3, color: Colors.black), //<-- SEE HERE
+      //             borderRadius: BorderRadius.circular(20.0),
+      //           ),
+      //         ),
+      //       ),
+      //       const SizedBox(height: 10,),
+      //       TextFormField(
+      //         textAlign: TextAlign.center,
+      //         decoration: InputDecoration(
+      //           enabledBorder: OutlineInputBorder(
+      //             borderSide:
+      //             const BorderSide(width: 3, color: Colors.greenAccent), //<-- SEE HERE
+      //             borderRadius: BorderRadius.circular(20.0),
+      //           ),
+      //         ),
+      //       ),
+      //       TextFormField(
+      //         textAlign: TextAlign.center,
+      //         decoration: InputDecoration(
+      //           enabledBorder: OutlineInputBorder(
+      //             borderSide:
+      //             const BorderSide(width: 3, color: Colors.greenAccent), //<-- SEE HERE
+      //             borderRadius: BorderRadius.circular(20.0),
+      //           ),
+      //         ),
+      //       ),
+      //       TextFormField(
+      //         textAlign: TextAlign.center,
+      //         decoration: InputDecoration(
+      //           enabledBorder: OutlineInputBorder(
+      //             borderSide:
+      //             const BorderSide(width: 3, color: Colors.greenAccent), //<-- SEE HERE
+      //             borderRadius: BorderRadius.circular(20.0),
+      //           ),
+      //         ),
+      //       ),
+      //       TextFormField(
+      //         textAlign: TextAlign.center,
+      //         decoration: InputDecoration(
+      //           enabledBorder: OutlineInputBorder(
+      //             borderSide:
+      //             const BorderSide(width: 3, color: Colors.greenAccent), //<-- SEE HERE
+      //             borderRadius: BorderRadius.circular(20.0),
+      //           ),
+      //         ),
+      //       ),
+      //
+      //     ],
+      //   ),
+      // ),
 
 
 
