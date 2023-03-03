@@ -1,6 +1,8 @@
-import 'dart:html';
+
 
 import 'package:flutter/material.dart';
+import 'package:new_project1/popup.dart';
+import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,6 +45,8 @@ class _MyHomePageState extends State<MyHomePage> {
   //   });
   // }
 
+  double _value = 0.5;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,82 +56,156 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
 
 
-      body: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Center(
-          child: Container(
-            width: 313,
-            height: 391,
-            decoration: BoxDecoration(
-              color: const Color(0xffFFFFFF),
-              border: Border.all(width: 3, color: const Color(0xffFFFFFF)),
-              borderRadius: const BorderRadius.all(Radius.circular(3)),
-        ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(top: 32,left: 22,),
-                      child: Text("Contract information",
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                          color: Color(0xff4B4B4B),
-                        ),
-                      ),
-                    ),
-                  const SizedBox(height: 20,),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                      children:const [
-                        Expanded(
-                            child: Divider(
-                              color: Color(0xff4B4B4B),
-                            ),
-                        ),
-                      ]
-                  ),
-                  const SizedBox(height: 20,),
-
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const [
-                      Padding(
-                        padding: EdgeInsets.only(left: 22,right: 22,),
-                        child: Text("Please ensure that the contract information of the crypto you deposit is the same as this crypto. Depositing crypto with different contract information will result in lost assets. Please copy the link into y our browser to view the current contract address.",
+      body: SingleChildScrollView(
+        child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Center(
+            child: Container(
+              width: 313,
+              height: 391,
+              decoration: BoxDecoration(
+                color: const Color(0xffFFFFFF),
+                border: Border.all(width: 3, color: const Color(0xffFFFFFF)),
+                borderRadius: const BorderRadius.all(Radius.circular(3)),
+          ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.only(top: 32,left: 22,),
+                        child: Text("Contract information",
                           style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 37,),
-                  Row(
-                    children: const [
-                      Padding(
-                        padding: EdgeInsets.only(left: 22,),
-                        child: Text("https://bscscan.../token/***98745",
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
+                            fontSize: 22,
+                            fontWeight: FontWeight.w700,
                             color: Color(0xff4B4B4B),
                           ),
                         ),
                       ),
+                    const SizedBox(height: 20,),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                        children:const [
+                          Expanded(
+                              child: Divider(
+                                color: Color(0xff4B4B4B),
+                              ),
+                          ),
+                        ]
+                    ),
+                    const SizedBox(height: 20,),
 
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: const [
+                        Padding(
+                          padding: EdgeInsets.only(left: 22,right: 22,),
+                          child: Text("Please ensure that the contract information of the crypto you deposit is the same as this crypto. Depositing crypto with different contract information will result in lost assets. Please copy the link into y our browser to view the current contract address.",
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 37,),
+                    Row(
+                      children: const [
+                        Padding(
+                          padding: EdgeInsets.only(left: 22,),
+                          child: Text("https://bscscan.../token/***98745",
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xff4B4B4B),
+                            ),
+                          ),
+                        ),
+
+                      ],
+                    ),
+
+
+                  ],
+              ),
+            ),
+          ),
+          Center(
+            child: Container(
+              padding: EdgeInsets.only(bottom: 7, top: 13),
+              width: 313,
+              decoration: BoxDecoration(
+                color: Color(0xffFFFFFF),
+                border: Border.all(width: 3, color: Color(0xffFFFFFF)),
+                borderRadius: BorderRadius.all(Radius.circular(8.39)),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color(0xffDDDDDD),
+                    blurRadius: 6.0,
+                    spreadRadius: 2.0,
+                    offset: Offset(0.0, 0.0),
+                  ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 19),
+                    child: Text(
+                      "Total pool size \$2 Million ",
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xff4B4B4B)
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 36,),
+
+                  SfSlider(
+                    // enableTooltip: true,
+                    activeColor: Color(0xff2CD47D),
+                    inactiveColor: Color(0xffF8F8FE),
+                    value: _value,
+                    min: 0.0,
+                    max: 100.0,
+                    onChanged: (value) {
+                      setState(() {
+                        _value = value;
+                      });
+                    },),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      rowText(title: "\$0M"),
+                      rowText(title: "\$0.5M"),
+                      rowText(title: "\$1M"),
+                      rowText(title: "\$1.5M"),
+                      rowText(title: "\$2M"),
                     ],
                   ),
                 ],
+              ),
             ),
           ),
-        ),
-      ],
+
+          GestureDetector(
+             onTap: (){
+
+               Navigator.push(
+                   context,
+                   MaterialPageRoute(builder: (context) => const PopUp()));
+             },
+
+              child: Text("hii")),
+        ],
     ),
+      ),
 
 
 
@@ -454,5 +532,16 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  rowText({required String title}) {
+    return Text(
+      title,
+      style: TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        color: Color(0xff4B4B4B).withOpacity(0.50),
+      ),
+
+    );
+  }
 
 }
